@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GridLayout</title>
+	<style type="text/css">
+		*,
+		*::before,
+		*::after{
+			box-sizing: border-box;
+		}
+		body{
+			width: 100%;
+			height: 100vh;
+			margin: 0;
+			display: grid;
+			grid-template-columns: repeat(5,1fr);
+			grid-template-rows: repeat(5,auto);
+		}
+		body > *{
+			background-color: #C0BFBF;
+			border: 1px solid black;
+		}
+		h2{
+			text-align: center;
+		}
+		.header{
+			grid-row: span 1;
+			grid-column: span 5;
+		}		
+
+		.footer{
+			grid-row: 5/6;
+			grid-column: span 5;
+		}
+
+		.nav{
+			grid-row: span 3;
+			grid-column: span 1;
+		}
+
+		.uc-left{
+			grid-row: span 1;
+			grid-column: span 1;
+		}
+		.uc-center{
+			grid-row: span 1;
+			grid-column: span 2;
+		}
+		.uc-right{
+			grid-row: span 1;
+			grid-column: span 1;
+		}
+
+		.md-content{
+			grid-row: span 1;
+			grid-column: span 4;
+		}
+		.lw-content{
+			grid-row: span 1;
+			grid-column: span 4;
+		}
+
+		@media screen and (max-width: 800px) {
+			body{
+				grid-template-columns: repeat(6,1fr);
+				grid-template-rows: repeat(5,auto);
+			}
+			.header{
+				grid-row: span 1;
+				grid-column: span 6;
+			}					
+
+			.nav{
+				grid-row: span 1;
+				grid-column: span 6;
+			}
+
+			.uc-left{
+				grid-row: span 1;
+				grid-column: span 2;
+			}
+			.uc-center{
+				grid-row: span 1;
+				grid-column: span 2;
+			}
+			.uc-right{
+				grid-row: span 1;
+				grid-column: span 2;
+			}
+
+			.md-content{
+				grid-row: span 1;
+				grid-column: span 3;
+			}
+			.lw-content{
+				grid-row: span 1;
+				grid-column: span 3;
+			}
+
+			.footer{
+				grid-row: span 1;
+				grid-column: span 6;
+			}
+		}
+
+	</style>
+
+</head>
+<body>
+	
+	<header class="header">
+		<h2>Header</h2>
+	</header>
+	<nav class="nav">
+		<h2>Nav</h2>
+	</nav>
+	<article class="uc-left">
+		<h2>Upper Content Left</h2>
+	</article>
+	<article class="uc-center">
+		<h2>Upper Content Center</h2>
+	</article>
+	<article class="uc-right">
+		<h2>Upper Content Right</h2>
+	</article>
+	<section class="md-content">
+		<h2>Middle Content</h2>
+	</section>
+	<section class="lw-content">
+		<h2>Lower Content</h2>
+	</section>
+	<footer class="footer">
+		<h2>Footer</h2>
+	</footer>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GridLayout</title>
+  <style type="text/css">
+    *,
+    *::before,
+    *::after{
+      box-sizing: border-box;
+    }
+    body{
+      width: 100%;
+      height: 100vh;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      grid-template-rows: repeat(5,auto);
+      grid-template-areas: 
+      "header header header header header"
+      "nav uc-left uc-center uc-center uc-right"
+      "nav md-content md-content md-content md-content"
+      "nav lw-content lw-content lw-content lw-content"
+      "footer footer footer footer footer"
+      ;	
+    }
+    body > *{
+      background-color: #C0BFBF;
+      border: 1px solid black;      
+    }
+    h2{
+      text-align: center;
+    }
+    .header{
+      grid-area: header;
+    }   
+
+    .footer{
+      grid-area: footer;
+    }
+
+    .nav{
+      grid-area: nav;
+    }
+
+    .uc-left{
+      grid-area: uc-left;
+    }
+    .uc-center{
+      grid-area: uc-center;
+    }
+    .uc-right{
+      grid-area: uc-right;
+    }
+
+    .md-content{
+      grid-area: md-content;
+    }
+    .lw-content{
+      grid-area: lw-content;
+    }
+
+    @media screen and (max-width: 800px) {
+      body{
+        grid-template-columns: repeat(6,1fr);
+        grid-template-rows: repeat(5,auto);
+        grid-template-areas: 
+	      "header header header header header header"
+	      "nav nav nav nav nav nav"
+	      "uc-left uc-left uc-center uc-center uc-right uc-right"
+	      "md-content md-content md-content lw-content lw-content lw-content"
+	      "footer footer footer footer footer footer"
+	      ;	
+	     }
+    }
+
+  </style>
+
+</head>
+<body>
+  
+  <header class="header">
+    <h2>Header</h2>
+  </header>
+  <nav class="nav">
+    <h2>Nav</h2>
+  </nav>
+  <article class="uc-left">
+    <h2>Upper Content Left</h2>
+  </article>
+  <article class="uc-center">
+    <h2>Upper Content Center</h2>
+  </article>
+  <article class="uc-right">
+    <h2>Upper Content Right</h2>
+  </article>
+  <section class="md-content">
+    <h2>Middle Content</h2>
+  </section>
+  <section class="lw-content">
+    <h2>Lower Content</h2>
+  </section>
+  <footer class="footer">
+    <h2>Footer</h2>
+  </footer>
+</body>
+</html>
+
+
+
+
